@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CzL-Hb-G4c">
+                    <rect key="frame" x="312" y="60" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="can-ke-HxM"/>
+                        <constraint firstAttribute="width" constant="30" id="qtQ-Xh-i6e"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G5T-rA-3oe">
+                    <rect key="frame" x="127" y="60" width="160" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="RCK-uL-u1f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7W-uk-LeB">
+                    <rect key="frame" x="171" y="123" width="72" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="72" id="TYz-PQ-7Tt"/>
+                        <constraint firstAttribute="height" constant="30" id="t4K-xg-PD3"/>
+                    </constraints>
+                    <state key="normal" title="Get Image">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obR-MO-1L2">
+                    <rect key="frame" x="57" y="259" width="300" height="300"/>
+                    <color key="backgroundColor" red="0.60392156860000001" green="0.81176470590000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="nnS-3c-XL8"/>
+                        <constraint firstAttribute="width" constant="300" id="ryq-0K-s9E"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="G5T-rA-3oe" secondAttribute="centerX" id="76x-dJ-G5K"/>
+                <constraint firstAttribute="centerX" secondItem="obR-MO-1L2" secondAttribute="centerX" id="C45-Fq-1Ie"/>
+                <constraint firstItem="G7W-uk-LeB" firstAttribute="top" secondItem="G5T-rA-3oe" secondAttribute="bottom" constant="33" id="SXb-yH-zXQ"/>
+                <constraint firstItem="G5T-rA-3oe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="dyQ-4R-Kez"/>
+                <constraint firstItem="CzL-Hb-G4c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="eJo-4S-yEl"/>
+                <constraint firstItem="G5T-rA-3oe" firstAttribute="centerX" secondItem="G7W-uk-LeB" secondAttribute="centerX" id="jrT-0Z-sVo"/>
+                <constraint firstAttribute="centerY" secondItem="obR-MO-1L2" secondAttribute="centerY" constant="-41" id="kTI-Pp-rFl"/>
+                <constraint firstItem="CzL-Hb-G4c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="312" id="tQJ-HM-yP6"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+</document>
