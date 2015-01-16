@@ -8,7 +8,15 @@
 
 #import "MyViewController.h"
 
-@interface MyViewController ()
+#import "SearchesViewController.h"
+#import <UIImageView+AFNetworking.h>
+
+@interface MyViewController () <UITextFieldDelegate>
+
+@property (nonatomic, weak) IBOutlet UITextField *textField;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UIImageView *validImageview;
+@property (nonatomic, strong) NSArray *searches;
 
 @end
 
@@ -16,22 +24,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.validImageview.backgroundColor = [UIColor redColor];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldDidChange:)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:self.textField];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Actions
+
+// TODO: Change the name of this action.
+- (IBAction)bTap:(id)sender {
+    [self addSearch:self.textField.text];
+    [self.imageView setImageWithURLRequest:[self imgurURLRequest]
+                          placeholderImage:nil
+                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                   }
+                                   failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                   }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)historyButtonTapped:(id)sender {
+    SearchesViewController *searchesViewController = [[SearchesViewController alloc] initWithNibName:nil bundle:nil];
+    searchesViewController.searches = self.searches;
+    [self presentViewController:searchesViewController animated:YES completion:nil];
 }
-*/
+
+#pragma mark - Helpers
+
+- (void)addSearch:(NSString *)search {
+    NSMutableArray *mutableSearches = [self.searches mutableCopy];
+    [mutableSearches addObject:search];
+    self.searches = [mutableSearches copy];
+}
+
+- (NSURLRequest *)imgurURLRequest {
+    NSString *urlString = [NSString stringWithFormat:@"http://i.imgur.com/%@.png", self.textField.text];
+    return [[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:urlString]];
+}
+
+- (BOOL)isValidString:(NSString *)string {
+    return string.length >= 4 && string.length <= 7;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidChange:(NSNotification *)textFieldDidChangeNotification {
+    if ([self isValidString:self.textField.text]) {
+        self.validImageview.backgroundColor = [UIColor greenColor];
+    } else {
+        self.validImageview.backgroundColor = [UIColor redColor];
+    }
+}
 
 @end

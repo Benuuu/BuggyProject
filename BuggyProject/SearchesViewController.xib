@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchesViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mqb-vZ-MJe">
+                    <rect key="frame" x="0.0" y="100" width="414" height="636"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My awesome searches!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reX-2a-7lt">
+                    <rect key="frame" x="117" y="52" width="180" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xva-tm-U4k">
+                    <rect key="frame" x="360" y="48" width="30" height="30"/>
+                    <state key="normal" title="Bye">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="byeButtonTapped:" destination="-1" eventType="touchUpInside" id="bat-V1-P41"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mqb-vZ-MJe" secondAttribute="trailing" id="Npa-4E-Llp"/>
+                <constraint firstItem="xva-tm-U4k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="O8Z-YF-u5F"/>
+                <constraint firstItem="mqb-vZ-MJe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZYO-Ui-SYa"/>
+                <constraint firstAttribute="centerX" secondItem="reX-2a-7lt" secondAttribute="centerX" id="a8O-db-ye1"/>
+                <constraint firstAttribute="trailing" secondItem="xva-tm-U4k" secondAttribute="trailing" constant="24" id="hz3-hk-kyg"/>
+                <constraint firstItem="mqb-vZ-MJe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="j45-d3-qlS"/>
+                <constraint firstItem="reX-2a-7lt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="52" id="pdi-Kj-2ye"/>
+                <constraint firstAttribute="bottom" secondItem="mqb-vZ-MJe" secondAttribute="bottom" id="zFb-U0-D3D"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+</document>

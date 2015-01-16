@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController">
             <connections>
+                <outlet property="imageView" destination="obR-MO-1L2" id="U1O-oh-bho"/>
+                <outlet property="textField" destination="G5T-rA-3oe" id="GWt-bq-FYa"/>
+                <outlet property="validImageview" destination="CzL-Hb-G4c" id="po3-Bk-oFO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,8 +41,11 @@
                     <state key="normal" title="Get Image">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="bTap:" destination="-1" eventType="touchUpInside" id="1s8-Ey-b8z"/>
+                    </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obR-MO-1L2">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obR-MO-1L2">
                     <rect key="frame" x="57" y="259" width="300" height="300"/>
                     <color key="backgroundColor" red="0.60392156860000001" green="0.81176470590000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -47,6 +53,21 @@
                         <constraint firstAttribute="width" constant="300" id="ryq-0K-s9E"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WPOBwNC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rer-ba-BWg">
+                    <rect key="frame" x="162" y="171" width="90" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIK-wT-jWS">
+                    <rect key="frame" x="76" y="60" width="30" height="30"/>
+                    <state key="normal" title="Hist">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="historyButtonTapped:" destination="-1" eventType="touchUpInside" id="L2V-dg-hzL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -55,9 +76,11 @@
                 <constraint firstItem="G7W-uk-LeB" firstAttribute="top" secondItem="G5T-rA-3oe" secondAttribute="bottom" constant="33" id="SXb-yH-zXQ"/>
                 <constraint firstItem="G5T-rA-3oe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="dyQ-4R-Kez"/>
                 <constraint firstItem="CzL-Hb-G4c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="eJo-4S-yEl"/>
+                <constraint firstItem="G5T-rA-3oe" firstAttribute="centerY" secondItem="PIK-wT-jWS" secondAttribute="centerY" id="j0p-EE-EPh"/>
                 <constraint firstItem="G5T-rA-3oe" firstAttribute="centerX" secondItem="G7W-uk-LeB" secondAttribute="centerX" id="jrT-0Z-sVo"/>
                 <constraint firstAttribute="centerY" secondItem="obR-MO-1L2" secondAttribute="centerY" constant="-41" id="kTI-Pp-rFl"/>
                 <constraint firstItem="CzL-Hb-G4c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="312" id="tQJ-HM-yP6"/>
+                <constraint firstItem="G5T-rA-3oe" firstAttribute="leading" secondItem="PIK-wT-jWS" secondAttribute="trailing" constant="21" id="xRV-dU-Tzk"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
         </view>
