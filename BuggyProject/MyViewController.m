@@ -35,28 +35,21 @@
 
 // TODO: Change the name of this action.
 - (IBAction)bTap:(id)sender {
-    [self addSearch:self.textField.text];
-    [self.imageView setImageWithURLRequest:[self imgurURLRequest]
-                          placeholderImage:nil
-                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                   }
-                                   failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                   }];
 }
 
 - (IBAction)historyButtonTapped:(id)sender {
-    SearchesViewController *searchesViewController = [[SearchesViewController alloc] initWithNibName:nil bundle:nil];
-    searchesViewController.searches = self.searches;
-    [self presentViewController:searchesViewController animated:YES completion:nil];
+//    SearchesViewController *searchesViewController = [[SearchesViewController alloc] initWithNibName:nil bundle:nil];
+//    searchesViewController.searches = self.searches;
+//    [self presentViewController:searchesViewController animated:YES completion:nil];
 }
 
 #pragma mark - Helpers
 
-- (void)addSearch:(NSString *)search {
-    NSMutableArray *mutableSearches = [self.searches mutableCopy];
-    [mutableSearches addObject:search];
-    self.searches = [mutableSearches copy];
-}
+//- (void)addSearch:(NSString *)search {
+//    NSMutableArray *mutableSearches = [self.searches mutableCopy];
+//    [mutableSearches addObject:search];
+//    self.searches = [mutableSearches copy];
+//}
 
 - (NSURLRequest *)imgurURLRequest {
     NSString *urlString = [NSString stringWithFormat:@"http://i.imgur.com/%@.png", self.textField.text];
